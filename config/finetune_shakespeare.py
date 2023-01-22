@@ -4,7 +4,7 @@ out_dir = 'out-shakespeare'
 eval_interval = 200
 wandb_log = False # feel free to turn on
 wandb_project = 'shakespeare'
-wandb_run_name = 'ft-' + str(time.time())
+wandb_run_name = f'ft-{str(time.time())}'
 compile = False # takes too little time to finetune, not worth it
 
 # save a nice and overfit checkpoint that

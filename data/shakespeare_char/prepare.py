@@ -4,6 +4,7 @@ So instead of encoding with GPT-2 BPE tokens, we just map characters to ints.
 Will save train.bin, val.bin containing the ids, and meta.pkl containing the
 encoder and decoder and some other related info.
 """
+
 import os
 import pickle
 import requests
@@ -27,7 +28,7 @@ print(f"vocab size: {vocab_size:,}")
 
 # create a mapping from characters to integers
 stoi = { ch:i for i,ch in enumerate(chars) }
-itos = { i:ch for i,ch in enumerate(chars) }
+itos = dict(enumerate(chars))
 def encode(s):
     return [stoi[c] for c in s] # encoder: take a string, output a list of integers
 def decode(l):
